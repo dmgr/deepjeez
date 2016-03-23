@@ -1,0 +1,24 @@
+{
+  "name": "deepjeez",
+  "authors": [
+    "Dawid Marcin Grzesiak"
+  ],
+  "description": "dependency manager",
+  "main": "lib/deepjeez.js",
+  "moduleType": [],
+  "keywords": [
+    "dependency",
+    "module",
+    "define",
+    "require"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
