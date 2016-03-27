@@ -3,15 +3,15 @@ deferreds = []
 
 resolveDeferreds = ->
   deferreds = deferreds.filter (deferred) ->
-    fulfilled = deferred.dependencies.every (dependency) -> modules[dependency]
+    fulfilled = deferred.dependencies.every (dependency) -> modules.hasOwnProperty(dependency)
 
     if fulfilled # call deferred callback with dependency injection
       deferred.callback.apply null, deferred.dependencies.map (dependency) -> modules[dependency]
 
     !fulfilled
 
-@$mod =
-  define: (module_name, factory) ->
+@$dj =
+  define: (module_name, dependencies, factory) ->
     modules[module_name] = factory()
     resolveDeferreds()
 
